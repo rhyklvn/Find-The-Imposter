@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  root: ".", // <-- points Vite to the current folder (client/)
   plugins: [react()],
   server: {
     host: true,
@@ -12,5 +13,8 @@ export default defineConfig({
         ws: true,
       },
     },
+  },
+  build: {
+    outDir: "../dist", // optional: outputs build to root dist folder
   },
 });
